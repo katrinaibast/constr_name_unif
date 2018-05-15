@@ -1,0 +1,45 @@
+{
+  "name": "constraint_uniform",
+  "abstract": "This is an extension for uniforming the names of base table constraints.",
+  "version": "1.0.0",
+  "maintainer": [
+    "Katrin Aibast <katrin.aibast@gmail.com>"
+  ],
+  "license": "MIT",
+  "prereqs": {
+    "runtime": {
+      "requires": {
+        "PostgreSQL": "9.2.0"
+      }
+    }
+  },
+  "provides": {
+    "constraint_uniform": {
+      "abstract": "This is an extension for uniforming the names of base table constraints.",
+      "file": "sql/constraint_uniform--1.0.0.sql",
+      "docfile": "doc/constraint_uniform.md",
+      "version": "1.0.0"
+    }
+  },
+  "resources": {
+    "repository": {
+      "url": "git://github.com/katrinaibast/constraint_uniform.git",
+      "web": "https://github.com/katrinaibast/constraint_uniform",
+      "type": "git"
+    }
+  },
+  "generated_by": "Katrin Aibast",
+  "meta-spec": {
+    "version": "1.0.0",
+    "url": "http://pgxn.org/meta/spec.txt"
+  },
+  "tags": [
+    "constraint uniform",
+    "naming convention",
+    "constraint name",
+    "name",
+    "renaming",
+    "constraint renaming",
+    "reformat constraint names"
+  ]
+}

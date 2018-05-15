@@ -1,7 +1,9 @@
-constraint_uniform
+PostgreSQL Constraint Name Uniforming Extension
 =========
+Bachelor's Thesis
+---------
 
-constraint_uniform is a PostgreSQL extension to uniform the names of different base table constraints. 
+This is a PostgreSQL extension to uniform the names of different base table constraints. 
 
 
 INSTALLATION
@@ -15,7 +17,9 @@ In directory where you downloaded the extension run
   
 Log into your PostgreSQL database and run   
   
-  `CREATE EXTENSION constraint_uniform; `    
+  `CREATE EXTENSION constraint_uniform; `
+  
+Further usage is defined in [docs.](..blob/master/doc/constraint_uniform.md)  
     
 AUTHOR
 ------
