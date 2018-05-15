@@ -6,22 +6,22 @@ constraint_uniform is a PostgreSQL extension to uniform the names of different b
 
 INSTALLATION
 ------------
-Requirements: PostgreSQL 9.2+
+Requirements: PostgreSQL 9.2+  
 
-In directory where you downloaded the extension run
-
-  make
-  make install
-
-Log into your PostgreSQL database and run 
-
-CREATE EXTENSION constraint_uniform; 
-
+In directory where you downloaded the extension run  
+   
+  `make`  
+  `make install`  
+  
+Log into your PostgreSQL database and run   
+  
+  `CREATE EXTENSION constraint_uniform; `    
+    
 AUTHOR
 ------
 
-Katrin Aibast
-katrin.aibast@gmail.com
+Katrin Aibast  
+katrin.aibast@gmail.com  
 
 
 LICENSE AND COPYRIGHT
