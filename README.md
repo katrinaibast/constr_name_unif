@@ -19,7 +19,7 @@ Log into your PostgreSQL database and run
   
   `CREATE EXTENSION constraint_uniform; `
   
-Further usage is defined in [docs.](..blob/master/doc/constraint_uniform.md)  
+Further usage is defined in [docs.](/doc/constraint_uniform.md)  
     
 AUTHOR
 ------
