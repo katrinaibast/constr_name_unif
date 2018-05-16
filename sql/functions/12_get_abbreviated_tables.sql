@@ -1,0 +1,5 @@
+CREATE OR REPLACE FUNCTION get_abbreviated_tables()
+  RETURNS SETOF ABBREVIATED_TABLE AS $$
+SELECT *
+FROM abbreviated_table;
+$$ LANGUAGE SQL;

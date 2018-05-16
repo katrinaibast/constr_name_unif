@@ -1,0 +1,6 @@
+CREATE OR REPLACE FUNCTION get_pattern(name TEXT)
+  RETURNS SETOF PATTERN AS $$
+SELECT *
+FROM pattern
+WHERE pattern_name = name;
+$$ LANGUAGE SQL;

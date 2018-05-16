@@ -10,7 +10,7 @@ PG92 = $(shell $(PG_CONFIG) --version | grep -qE " 8\\.| 9\\.1" && echo no || ec
 ifeq ($(PG92),yes)
 all: sql/$(EXTENSION)--$(EXTVERSION).sql
 
-sql/$(EXTENSION)--$(EXTVERSION).sql: sql/conf/*.sql sql/functions/*.sql sql/internal_functions/*.sql
+sql/$(EXTENSION)--$(EXTVERSION).sql: sql/conf/*.sql $sort(sql/functions/*.sql)
 	cat $^ > $@
 
 DATA = $(wildcard sql/*--*.sql) sql/$(EXTENSION)--$(EXTVERSION).sql
