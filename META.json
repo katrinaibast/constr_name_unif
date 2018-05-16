@@ -5,7 +5,7 @@
   "maintainer": [
     "Katrin Aibast <katrin.aibast@gmail.com>"
   ],
-  "license": "MIT",
+  "license": "mit",
   "prereqs": {
     "runtime": {
       "requires": {
