@@ -8,9 +8,7 @@ CREATE OR REPLACE FUNCTION get_new_name(type                      TEXT,
                                         is_table_name_abbreviated BOOLEAN DEFAULT FALSE)
   RETURNS TEXT AS $$
 DECLARE
-  delimiter_char                  VARCHAR;
-  suffix                          BOOLEAN;
-  short_abbreviation              BOOLEAN;
+  pattern                         PATTERN;
   abbreviation                    TEXT;
   result                          TEXT;
   name_length                     INTEGER;
@@ -21,19 +19,16 @@ DECLARE
   constraint_name_count_in_table  INTEGER;
   truncate_by                     INTEGER;
 BEGIN
-  SELECT delimiter
-  INTO delimiter_char
+  SELECT *
+  INTO pattern
   FROM get_pattern(pattern_name);
 
-  SELECT has_suffix
-  INTO suffix
-  FROM get_pattern(pattern_name);
+  IF pattern IS NULL
+  THEN
+    RAISE EXCEPTION 'There is no such pattern!';
+  END IF;
 
-  SELECT has_short_abbreviation
-  INTO short_abbreviation
-  FROM get_pattern(pattern_name);
-
-  abbreviation := get_constraint_abbreviation(type, short_abbreviation);
+  abbreviation := get_constraint_abbreviation(type, pattern.has_short_abbreviation);
 
   FOREACH col IN ARRAY REGEXP_SPLIT_TO_ARRAY(column_names, ',')
   LOOP
@@ -46,7 +41,7 @@ BEGIN
   THEN
     IF LENGTH(foreign_table_n) > 0
     THEN
-      result := result || delimiter_char || foreign_table_n;
+      result := result || pattern.delimiter || foreign_table_n;
     END IF;
   END IF;
 
@@ -56,16 +51,16 @@ BEGIN
     LOOP
       IF LENGTH(col) > 0
       THEN
-        result := result || delimiter_char || col;
+        result := result || pattern.delimiter || col;
       END IF;
     END LOOP;
   END IF;
 
-  IF suffix = TRUE
+  IF pattern.has_suffix = TRUE
   THEN
-    result := result || delimiter_char || abbreviation;
+    result := result || pattern.delimiter || abbreviation;
   ELSE
-    result := abbreviation || delimiter_char || result;
+    result := abbreviation || pattern.delimiter || result;
   END IF;
 
   name_length := get_name_length(result);
@@ -98,11 +93,11 @@ BEGIN
 
   IF type = 'PRIMARY KEY' AND constraint_name_count_in_schema != 0 AND result != old_name
   THEN
-    result := rename_constraint_with_same_name(result, delimiter_char || abbreviation, suffix,
+    result := rename_constraint_with_same_name(result, pattern.delimiter || abbreviation, pattern.has_suffix,
                                                constraint_name_count_in_schema + 1);
   ELSIF constraint_name_count_in_table != 0 AND result != old_name
     THEN
-      result := rename_constraint_with_same_name(result, delimiter_char || abbreviation, suffix,
+      result := rename_constraint_with_same_name(result, pattern.delimiter || abbreviation, pattern.has_suffix,
                                                  constraint_name_count_in_table + 1);
   END IF;
   RETURN result;

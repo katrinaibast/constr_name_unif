@@ -17,9 +17,9 @@ In directory where you downloaded the extension run
   
 Log into your PostgreSQL database and run   
   
-  `CREATE EXTENSION constraint_uniform; `
+  `CREATE EXTENSION constr_name_unif; `
   
-Further usage is defined in [docs.](/doc/constraint_uniform.md)  
+Further usage is defined in [docs.](/doc/constr_name_unif.md)  
     
 AUTHOR
 ------

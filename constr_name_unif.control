@@ -1,0 +1,4 @@
+# constr_name_unif extension
+default_version = '1.0.0'
+relocatable = true
+comment = 'Extension for uniforming the names of different constraints in base tables'

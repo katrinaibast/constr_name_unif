@@ -10,6 +10,6 @@ BEGIN
     result := name;
   END IF;
 
-  RETURN result;
+  RETURN TRIM(trailing '_' from result);
 END;
 $$ LANGUAGE plpgsql;

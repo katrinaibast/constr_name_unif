@@ -1,4 +1,4 @@
-EXTENSION	= constraint_uniform
+EXTENSION	= constr_name_unif
 EXTVERSION = $(shell grep default_version $(EXTENSION).control | \
 	sed -e "s/default_version[[:space:]]*=[[:space:]]*'\([^']*\)'/\1/")
 

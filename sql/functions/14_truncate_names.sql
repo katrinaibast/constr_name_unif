@@ -27,7 +27,7 @@ BEGIN
   LOOP
     IF (LENGTH(name) > truncate_each_by AND (LENGTH(name) - truncate_each_by >= 3))
     THEN
-      result := result || ',' || SUBSTRING(name FROM 1 FOR (LENGTH(name) - truncate_each_by));
+      result := result || ',' || TRIM(trailing '_' from SUBSTRING(name FROM 1 FOR (LENGTH(name) - truncate_each_by)));
     ELSE
       result := result || ',' || name;
     END IF;
