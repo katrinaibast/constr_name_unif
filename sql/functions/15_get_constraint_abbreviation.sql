@@ -45,7 +45,8 @@ BEGIN
       ELSE
         RETURN 'exclude';
       END IF;
+  ELSE
+    RAISE EXCEPTION 'There is no such constraint type!';
   END IF;
-  RETURN '';
 END;
 $$ LANGUAGE plpgsql;

@@ -82,8 +82,7 @@ BEGIN
       ELSE
         result := get_new_name(type, pattern_name, old_name, schema_n, table_n,
                                truncate_names(columns, name_length - max_constraint_length),
-                               foreign_table_n,
-                               TRUE);
+                               foreign_table_n, TRUE);
       END IF;
     END IF;
   END IF;

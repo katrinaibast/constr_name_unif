@@ -28,7 +28,6 @@ FROM information_schema.table_constraints tc
     ON rc.unique_constraint_catalog = ccu.constraint_catalog
        AND rc.unique_constraint_schema = ccu.constraint_schema
        AND rc.unique_constraint_name = ccu.constraint_name
-       AND tc.table_name = ccu.table_name
 
 WHERE tc.constraint_name NOT LIKE '%_not_null'
       AND constraint_type != 'CHECK'
