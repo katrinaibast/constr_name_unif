@@ -3,6 +3,8 @@ PostgreSQL Constraint Name Uniforming Extension
 Bachelor's Thesis
 ---------
 
+The abstract of the thesis in available in [docs.](/doc/abstract.md)  
+
 This is a PostgreSQL extension to uniform the names of different base table constraints. 
 
 
