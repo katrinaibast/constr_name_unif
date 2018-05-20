@@ -8,7 +8,7 @@ Good intention-revealing names and following certain naming conventions are part
 
 From the analysis, it turned out that not one database that was observed had complete consistency in naming constraints. There were many different patterns by which the constraints were named. That kind of inconsistency makes database administration many times more difficult. Therefore, an extension for uniforming constraints would certainly be very useful tool for any database developer.
 
-The thesis is in Estonian and contains 67 pages of text, 6 chapters, 29 figures, 8 tables. 
+The thesis is in Estonian and contains 71 pages of text, 6 chapters, 21 figures, 10 tables. 
 
 
 Referecnes
