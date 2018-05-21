@@ -1,7 +1,7 @@
 {
   "name": "constr_name_unif",
   "abstract": "This is an extension for uniforming the names of base table constraints.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "maintainer": [
     "Katrin Aibast <katrin.aibast@gmail.com>"
   ],
@@ -18,7 +18,7 @@
       "abstract": "This is an extension for uniforming the names of base table constraints.",
       "file": "sql/constr_name_unif--1.0.0.sql",
       "docfile": "doc/constr_name_unif.md",
-      "version": "1.0.0"
+      "version": "1.0.1"
     }
   },
   "resources": {
@@ -30,7 +30,7 @@
   },
   "generated_by": "Katrin Aibast",
   "meta-spec": {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "url": "http://pgxn.org/meta/spec.txt"
   },
   "tags": [
