@@ -1,6 +1,4 @@
 CREATE OR REPLACE FUNCTION get_name_length(name TEXT)
   RETURNS INT AS $$
-BEGIN
-  RETURN CHAR_LENGTH(name);
-END;
-$$ LANGUAGE plpgsql;
+SELECT CHAR_LENGTH(name);
+$$ LANGUAGE sql;
