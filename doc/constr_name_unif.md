@@ -8,14 +8,14 @@ VIEWING CONSTRAINTS
 *get_all_constraints() RETURNS SETOF constraint_type*  
      See all renamable constraints defined in your database in all non-system schemas.
 
-*get_all_constraints_in_schema(schema_name TEXT) RETURNS SETOF constraint_type*  
+*get_all_constraints_in_schema(schema_n TEXT) RETURNS SETOF constraint_type*  
     See all renamable constraints defined in your database in specific schema.
   
 *get_all_constraints(type TEXT) RETURNS SETOF constraint_type*  
     See all renamable constraints of the specific type defined in your database in all non-system schemas.  
     Accepable inputs: 'PRIMARY KEY', 'FOREIGN KEY', 'CHECK', 'UNIQUE', 'EXCLUDE'.  
     
-*get_all_constraints_in_schema(schema_name TEXT, type TEXT) RETURNS SETOF constraint_type*  
+*get_all_constraints_in_schema(schema_n TEXT, type TEXT) RETURNS SETOF constraint_type*  
     See all renamable constraints of the specific type defined in your database in specific schema.  
     Accepable inputs for type: 'PRIMARY KEY', 'FOREIGN KEY', 'CHECK', 'UNIQUE', 'EXCLUDE'.    
   
@@ -44,14 +44,14 @@ RENAMING CONSTRAINTS
 *rename_all_constraints(pattern_name TEXT) RETURNS VOID*  
      Rename all the constraints defined in your database in all non-system schemas.
 
-*rename_all_constraints_in_schema(pattern_name TEXT, schema_name TEXT) RETURNS VOID*  
+*rename_all_constraints_in_schema(pattern_name TEXT, schema_n TEXT) RETURNS VOID*  
     Rename all the constraints defined in your database in specific schema.
   
 *rename_all_constraints(pattern_name TEXT, type TEXT) RETURNS VOID*  
     Rename all the constraints of the specific type defined in your database in all non-system schemas.  
     Accepable inputs: 'PRIMARY KEY', 'FOREIGN KEY', 'CHECK', 'UNIQUE', 'EXCLUDE'.  
     
-*rename_all_constraints_in_schema(pattern_name TEXT, schema_name TEXT, type TEXT) RETURNS VOID*  
+*rename_all_constraints_in_schema(pattern_name TEXT, schema_n TEXT, type TEXT) RETURNS VOID*  
     Rename all the constraints of the specific type defined in your database in specific schema.  
     Accepable inputs for type: 'PRIMARY KEY', 'FOREIGN KEY', 'CHECK', 'UNIQUE', 'EXCLUDE'.    
  
